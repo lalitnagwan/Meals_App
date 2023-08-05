@@ -1,58 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="Css/style.css">
-    <title>Meal App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Meal App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css">
+    <script src="https://kit.fontawesome.com/e6f12e5790.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-        <!-- heading  -->
-    <h1>Search Meals</h1>
 
-    <!-- search bars  -->
-    <div id="searchBar">
-        <!-- input bar -->
-        <input onkeyup="keyupHandle()" type="text" id="searchtext" placeholder="Enter Name here to Search ">
-        <!-- button  -->
-        <button type="button">Search</button>
-
-        <!--search results  -->
-        <ul id="search-result">
-        </ul>
+    <div class="background-image">
+        <img src="./assets/Coding-Ninjas.jpg" alt="" />
     </div>
 
-    <!-- Favourites page redirection  -->
-    <a href="Comp/favorites.html" id="title-fav">Favourites</a>
 
-    <!-- main flex  -->
-    <div id="mainFlex">
-        <!-- categoty div  -->
-        <div id="category" class="centerLists">
-            <h4>Select by Category</h4>
+    <div id="navbar">
+        <a href="index.html">
+            <div class="top-logo">The Meal App
+                <hr />
+            </div>
+        </a>
+       
 
-            <!-- select input for categoty  -->
-            <select onchange="cat_click(this.value)" id="select-cat"></select>
+        <div class="side-drawer">
 
-            <!-- category list  -->
-            <div  id="cat-list">                
+            <div id="toggle-sidebar">
+                <i class="fa-solid fa-bars"></i>
+                <span id="total-counter">0</span>
             </div>
         </div>
 
-        <div id="fav-div" style="display: none;">
-            <div id="fav-list">                
+
+    </div>
+
+
+    <div id="main">
+
+        <div id="sidebar">
+            <div class="top_gap"></div>
+            <hr />
+            <div class="title small">
+                Favourite Items
             </div>
+            <hr />
+            <div id="fav">
+                <!-- <div class="fav-item">
+
+              
+                    <div class="fav-item-photo">
+                        <img src="https://www.themealdb.com/images/ingredients/Lime.png" alt="">
+                    </div>
+                    <div class="fav-item-details">
+                        <div class="fav-item-name">
+                            <strong>Name: </strong>
+                            <span class="fav-item-text">
+                                Chicken
+                            </span>
+                        </div>
+                        <div id="fav-like-button">
+                            Add or Remove
+                        </div>
+
+                    </div>
+
+                </div> -->
+
+            </div>
+
         </div>
-        
+        <div id="flex-box">
+
+
+
+            <div class="container">
+
+                <div class="header">
+                    <div class="title">
+                        Let's Eat Something New
+                    </div>
+                </div>
+                <div class="" id="search-bar">
+                    <div class="icon">
+                        <i class="fa-solid fa-search "></i>
+                    </div>
+                    <div class="new-search-input">
+                        <form onkeyup="showMealList()">
+                            <input id="search-input" type="text" placeholder="Search food, receipe" />
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class="item-details">
+                <div class="item-details-left">
+                    <img src="assets/Coding-Ninjas.jpg" alt="">
+                </div>
+                <div class="item-details-right">
+                    <div class="item-name">
+                        <strong>Name: </strong>
+                        <span class="item-text">
+                            Roti
+                        </span>
+                     </div>
+                    <div class="item-category">
+                        <strong>Category: </strong>
+                        <span class="item-text">
+                            Roti
+                        </span>
+                    </div>
+                    <div class="item-ingrident">
+                        <strong>Ingrident: </strong>
+                        <span class="item-text">
+                            Roti
+                        </span>
+                    </div>
+                    <div class="item-instruction">
+                        <strong>Instructions: </strong>
+                        <span class="item-text">
+                            Roti
+                        </span>
+                    </div>
+                    <div class="item-video">
+                        <strong>Video Link</strong>
+                        <span class="item-text">
+                            Roti
+                        </span>
+                    </div>
+                </div>
+            </div>  -->
+
+            <div id="cards-holder" class="">
+
+
+                <!-- <div class="card">
+                    <div class="card-top">
+                        <div class="dish-photo">
+                            <img src="${element.strMealThumb}" alt="">
+                        </div>
+                        <div class="dish-name">
+                            ${element.strMeal}
+                        </div>
+                        <div class="dish-details">
+                            ${truncate(element.strInstructions,50)}
+                            <a href="${element.strInstructions}">
+                                <span class="button">Know More</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="like">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="play">
+                            <a href="${element.strYoutube}">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+
+
+        </div>
+
+
     </div>
 
     <script src="script.js"></script>
-    <!-- scripts -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
 </body>
+
 </html>
